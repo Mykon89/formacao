@@ -31,8 +31,7 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
-INSTALLED_APPS = [
-    'pessoas',
+INSTALLED_APPS = [    
     'receitas',
     'usuarios',
     'django.contrib.admin',
