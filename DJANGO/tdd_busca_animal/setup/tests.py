@@ -1,12 +1,18 @@
 from django.test import LiveServerTestCase
 from selenium import webdriver
 from selenium.webdriver.common.by import By
-import time
+from animais.models import Animal
 
 class AnimaisTestCase(LiveServerTestCase):
 
   def setUp(self):
     self.browser = webdriver.Chrome('C:/Users/helvis/Desktop/FORMACAO/DJANGO/tdd_busca_animal/chromedriver.exe')
+    self.animal = Animal.objects.create(
+      nome_animal = 'leão',
+      predador = 'Sim',
+      venenoso = 'Não',
+      domestico = 'Não'
+    )
 
   def tearDown(self):
     self.browser.quit()
@@ -27,14 +33,15 @@ class AnimaisTestCase(LiveServerTestCase):
 
     #Ele vê um campo para pesquisar animais pelo nome.
     buscar_animal_input = self.browser.find_element(By.CSS_SELECTOR, 'input#buscar-animal')
-    self.assertEqual(buscar_animal_input.get_attribute('placeholder'), 'Exemplo: leão')
+    self.assertEqual(buscar_animal_input.get_attribute('placeholder'), 'Exemplo: leão, urso...')
 
     #Ele pesquisa por Leão e clica no botão pesquisar.
     buscar_animal_input.send_keys('leão')
-    time.sleep(2)
     self.browser.find_element(By.CSS_SELECTOR, 'form button').click()
 
     #O site exibe 4 características do animal pesquisado.
+    caracteristicas = self.browser.find_elements(By.CSS_SELECTOR, '.result-description')
+    self.assertGreater(len(caracteristicas), 3)
 
     #Ele desiste de adotar um leão.
     
