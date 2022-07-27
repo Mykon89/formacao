@@ -1,0 +1,23 @@
+<html>
+  <script>
+    
+    //1 - Criar uma função para receber um numero e descobrir se um número é primo ou não
+    //2 - Numeros primos são aqueles que são divisiveis por 1 e por ele mesmo e o numero 1 não é primo
+    //3 - Com exceção do número 2, todos os primos são impar
+    //4 - Criar uma estrutura de repetição
+
+    function verificaNumeroPrimo(numero) {
+      var divisor = 0;
+      for (var i = 1; i <= numero; i++) {
+        if (numero % i === 0) {
+          divisor++;
+        }
+      }
+      if (divisor === 2) {
+        console.log("O numero " + numero + " é primo.");
+      } else {
+        console.log("O numero " + numero + " não é primo.");
+      }
+    }
+  </script>
+</html>
