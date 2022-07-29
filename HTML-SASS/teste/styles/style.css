@@ -1,0 +1,116 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*, *:after, *:before {
+  box-sizing: inherit;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 0;
+}
+
+button, [type=submit] {
+  cursor: pointer;
+  -webkit-appearance: button;
+}
+
+p {
+  -webkit-margin-start: 0;
+          margin-inline-start: 0;
+  -webkit-margin-end: 0;
+          margin-inline-end: 0;
+  padding: 0;
+  margin: 0;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", "monospace";
+}
+
+section {
+  width: 100%;
+  height: 100vh;
+  padding: 20px;
+  font-family: "Roboto", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+@media (max-width: 768px) {
+  section {
+    height: auto;
+    padding: 0;
+  }
+}
+section.javascript {
+  background: yellow;
+  color: black;
+}
+section.nodejs {
+  background: greenyellow;
+  color: gray;
+}
+section .container {
+  width: 80%;
+}
+@media (max-width: 768px) {
+  section .container {
+    width: calc(100% - 40px);
+    padding: 80px 0 100px;
+  }
+}
+section .container h1 {
+  width: 100%;
+  font-size: 2.4rem;
+  text-align: left;
+  padding: 24px 0;
+  font-weight: 700;
+}
+@media (max-width: 768px) {
+  section .container h1 {
+    text-align: center;
+  }
+}
+section .container p {
+  line-height: 1.5rem;
+}
+@media (max-width: 768px) {
+  section .container p {
+    text-align: justify;
+  }
+}
+section .container .actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  margin-top: 40px;
+}
+section .container .actions .btn {
+  margin: 0 auto;
+  padding: 8px;
+  border-radius: 8px;
+  font-size: 1.5rem;
+  text-decoration: none;
+  color: inherit;
+  font-weight: 500;
+}
+section .container .actions .btn:hover {
+  color: white;
+}
+section.react {
+  background: blue;
+  color: white;
+}
+section.react .actions .btn:hover {
+  color: gray;
+}/*# sourceMappingURL=style.css.map */

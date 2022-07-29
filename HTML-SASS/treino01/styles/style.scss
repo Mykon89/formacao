@@ -1,0 +1,17 @@
+@mixin reset {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 15px;
+    body {
+        @include reset();
+        font-family: 'Alata', sans-serif;
+        overflow-x: hidden;
+        min-height: 100vh;
+        h1, h2, h3, li {
+            font-family: 'Josefin Sans', sans-serif;
+        }
+    }
+}

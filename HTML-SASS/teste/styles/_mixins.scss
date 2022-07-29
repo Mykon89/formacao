@@ -1,0 +1,16 @@
+@mixin flexCenter($direction: column) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: $direction;
+}
+
+@mixin theme($bg, $text) {
+    background: $bg;
+    color: $text;
+    
+}
+
+@function weight($weight-name) {
+    @return map-get($font-weight, $weight-name)
+}
